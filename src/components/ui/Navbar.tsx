@@ -1,135 +1,148 @@
-import { Link } from "react-scroll";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import eaklLogo from "../images/EAKL Logo.jpeg";
-import { useAuth } from "@/contexts/AuthContext";
-
-const navLinks = [
-  { name: "Home", path: "home" },
-  { name: "About Us", path: "about-us" },
-  { name: "Services", path: "services" },
-];
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { currentUser, logout } = useAuth();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isLanding = location.pathname === "/";
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate("/");
-    } catch (error) {
-      console.error("Logout failed", error);
-    }
-  };
+  // Toggle mobile menu
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const getFirstName = () => {
-    if (!currentUser?.displayName) return "User";
-    return currentUser.displayName.split(" ")[0];
-  };
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Navigation links
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Me", path: "/about" },
+    { name: "My Portfolio", path: "/portfolio" },
+    { name: "Testimonials", path: "/testimonials" },
+    { name: "Contact", path: "/contact" }
+  ];
 
   return (
-    <nav className="sticky top-0 w-full bg-white z-50 shadow-sm px-4 md:px-10 py-4 flex items-center justify-between">
-      {/* Left Side */}
-      <div className="flex items-center gap-4">
-        <img src={eaklLogo} alt="EAKL Logo" className="w-8 h-8 rounded-sm" />
-        <h1 className="text-base font-bold">NextBook</h1>
-      </div>
-
-      {/* Center Links */}
-      {isLanding && (
-        <div className="hidden md:flex gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="hover:text-redcustom text-sm font-medium cursor-pointer transition-colors duration-150"
-              smooth={true}
-              duration={500}
-            >
-              {link.name}
+    <nav className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300 ${
+      scrolled ? "bg-white shadow-md" : "bg-transparent"
+    }`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
+          {/* Website Name */}
+          <div>
+            <Link to="/" className="text-primary font-bold text-lg">
+              Muhammad Subhan Khan
             </Link>
-          ))}
-        </div>
-      )}
+          </div>
 
-      {/* Right Side */}
-      {currentUser ? (
-        <div className="flex items-center gap-3">
-          <p className="hidden sm:block text-sm font-medium text-gray-700">
-            Welcome, <span className="text-blue-600">{getFirstName()}</span>
-          </p>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <div className="flex items-center gap-1 cursor-pointer">
-                <img
-                  src={currentUser.photoURL || "https://i.pravatar.cc/40"}
-                  alt="Profile"
-                  className="w-8 h-8 rounded-full"
-                />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-neutral hover:text-primary font-medium transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button - Always visible */}
+          <div className="flex items-center">
+            <Link 
+              to="/contact"
+              className="whitespace-nowrap px-4 py-2 bg-white text-primary border border-primary rounded-full font-medium hover:bg-primary hover:text-white transition-colors"
+            >
+              <span className="flex items-center">
+                <span>Work With Me</span>
                 <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
+                  className="ml-2 w-4 h-4 flex-shrink-0" 
                   fill="none" 
                   stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className="text-gray-500"
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="m6 9 6 6 6-6"/>
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
+                  />
                 </svg>
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              className="mt-2 w-48 bg-white shadow-lg rounded-md p-1"
+              </span>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="ml-4 md:hidden flex items-center justify-center p-2 rounded-md text-neutral hover:text-primary focus:outline-none"
             >
-              <DropdownMenuItem
-                onClick={() => navigate("/recently-requested")}
-                className="cursor-pointer px-3 py-2 rounded hover:bg-gray-100"
-              >
-                Recently Requested
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => navigate("/favourites")}
-                className="cursor-pointer px-3 py-2 rounded hover:bg-gray-100"
-              >
-                Favourites
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={handleLogout}
-                className="text-red-600 cursor-pointer px-3 py-2 rounded hover:bg-red-100"
-              >
-                Logout
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              <span className="sr-only">Open main menu</span>
+              {!isMenuOpen ? (
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
-      ) : isLanding ? (
-        <div className="flex gap-3">
-          <Button
-            size="sm"
-            className="relative transition-colors duration-200"
-            onClick={() => navigate("/sign-in")}
-          >
-            <span className="relative z-10">LOGIN</span>
-            <span className="absolute inset-0 border-2 border-transparent rounded-md" />
-          </Button>
-       
-          
-        </div>
-      ) : null}
+
+        {/* Mobile menu, show/hide based on menu state */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg">
+            <div className="py-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="block py-2 px-4 text-neutral hover:bg-primary-light hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

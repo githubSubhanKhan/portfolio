@@ -7,7 +7,7 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     './index.html',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -18,41 +18,49 @@ module.exports = {
     },
     extend: {
       colors: {
-        redcustom: "#880015",
-        bluecustom: "#E3E6F2",
-        redbgcustom: "#F2DFD8",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Core brand colors extracted from the screenshot
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#0033B6", // Dark blue from the background and logo
+          light: "#E3F0FF", // Light blue background shade
+          foreground: "#FFFFFF", // White text on primary
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#FFC629", // Yellow/gold from the star accents
+          foreground: "#0A0A0A", // Dark text on secondary
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#FF9D2D", // Orange accent from the bottom star
+          foreground: "#FFFFFF", // White text on accent
+        },
+        neutral: {
+          DEFAULT: "#1E293B", // Dark text color
+          light: "#64748B", // Light text/subtitle color
+          bg: "#F8FAFC", // Light background color
+        },
+        // Keep existing color structure with new values
+        redcustom: "#0033B6", // Updated to match the site's primary blue
+        bluecustom: "#E3F0FF", // Light blue background
+        redbgcustom: "#F5F7FF", // Very light blue background
+        border: "#E2E8F0",
+        input: "#E2E8F0",
+        ring: "#0033B6",
+        background: "#FFFFFF",
+        foreground: "#1E293B",
+        destructive: {
+          DEFAULT: "#EF4444",
+          foreground: "#FFFFFF",
+        },
+        muted: {
+          DEFAULT: "#F1F5F9",
+          foreground: "#64748B",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#FFFFFF",
+          foreground: "#1E293B",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "#FFFFFF",
+          foreground: "#1E293B",
         },
       },
       borderRadius: {

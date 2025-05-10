@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import AboutUs from "./AboutUs";
-import Hero from "./Hero";
 import Navbar from "../ui/Navbar";
-import Services from "./Services";
 import WhyUs from "./WhyUs";
 import FooterSection from "./FooterSection";
 import FacultyReviews from "./FacultyReviews";
+import HeroSection from "@/pages/HeroSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -43,28 +42,28 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <Hero />
+        <HeroSection/>
       </motion.div>
 
       {/* About Us Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <AboutUs />
-      </motion.div>
+      </motion.div> */}
 
       {/* Faculty Reviews Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <FacultyReviews />
-      </motion.div>
+      </motion.div> */}
 
       {/* Why Us Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <WhyUs />
-      </motion.div>
+      </motion.div> */}
 
       {/* Footer */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <FooterSection />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
