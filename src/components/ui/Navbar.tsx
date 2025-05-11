@@ -8,20 +8,6 @@ const Navbar = () => {
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Navigation links
   const navLinks = [
     { name: "Home", path: "/" },
@@ -58,28 +44,7 @@ const Navbar = () => {
 
           {/* CTA Button - Always visible */}
           <div className="flex items-center">
-            <Link 
-              to="/contact"
-              className="whitespace-nowrap px-4 py-2 bg-white text-primary border border-primary rounded-full font-medium hover:bg-primary hover:text-white transition-colors"
-            >
-              <span className="flex items-center">
-                <span>Work With Me</span>
-                <svg 
-                  className="ml-2 w-4 h-4 flex-shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M14 5l7 7m0 0l-7 7m7-7H3" 
-                  />
-                </svg>
-              </span>
-            </Link>
+            
 
             {/* Mobile Menu Button */}
             <button
