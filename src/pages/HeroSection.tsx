@@ -6,6 +6,7 @@ const HeroSection = () => {
     <section className="relative w-full min-h-screen flex items-center overflow-hidden">
       {/* Background Color - Blue background that covers right portion on desktop */}
       <div className="absolute top-0 right-0 w-1/2 md:w-3/5 h-full bg-blue-600 z-0"></div>
+
       
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
         <div className="flex flex-col lg:flex-col md:flex-row items-center lg:items-stretch justify-between">
@@ -34,7 +35,7 @@ const HeroSection = () => {
           </div>
           
           {/* Right Content - Browser Window with Image */}
-          <div className="w-full lg:w-6/12 flex items-center justify-center relative">
+          <div className="w-full lg:w-6/12 flex items-center justify-start relative">
             
             {/* Browser window mockup */}
             <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-md">

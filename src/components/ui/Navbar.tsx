@@ -32,15 +32,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300 ${
-      scrolled ? "bg-white shadow-md" : "bg-transparent"
+    <nav className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300 bg-white shadow-md"
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Website Name */}
           <div>
             <Link to="/" className="text-primary font-bold text-lg">
-              Muhammad Subhan Khan
+              Portfolio
             </Link>
           </div>
 
