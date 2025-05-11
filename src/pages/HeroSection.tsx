@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute top-0 right-0 w-1/2 md:w-3/5 h-full bg-blue-600 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
-        <div className="flex flex-row lg:flex-row items-center lg:items-stretch justify-between">
+        <div className="flex flex-col lg:flex-col md:flex-row items-center lg:items-stretch justify-between">
           {/* Left Content - Text */}
           <div className="w-full lg:w-5/12 mb-12 lg:mb-0 text-left">
             <h3 className="text-blue-600 font-semibold text-xl mb-2">
@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
           
           {/* Right Content - Browser Window with Image */}
-          <div className="w-full lg:w-6/12 flex items-center justify-start relative">
+          <div className="w-full lg:w-6/12 flex items-center justify-center relative">
             
             {/* Browser window mockup */}
             <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-md">
