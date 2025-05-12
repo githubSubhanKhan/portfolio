@@ -1,12 +1,86 @@
 import { Link } from "react-router-dom";
 import image from "../components/images/Professional_Profile_Pic.jpg";
 import { MoveUpRight } from "lucide-react";
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const fullName = { first: "Muhammad", last: "Subhan Khan" };
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isTypingFirstName, setIsTypingFirstName] = useState(true);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleTyping();
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [firstName, lastName, isDeleting, isTypingFirstName]);
+
+  const handleTyping = () => {
+    // Set typing speed based on action (typing vs deleting)
+    setTypingSpeed(isDeleting ? 75 : 150);
+
+    if (isTypingFirstName) {
+      // Handle typing the first name
+      if (!isDeleting && firstName === fullName.first) {
+        // First name complete, move to last name
+        setIsTypingFirstName(false);
+        return;
+      }
+
+      if (isDeleting && firstName === "") {
+        // Finished deleting first name, restart cycle
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(500); // Pause before retyping
+        return;
+      }
+
+      // Calculate the next part of first name
+      const currentIndex = isDeleting
+        ? firstName.length - 1
+        : firstName.length;
+
+      const newText = isDeleting
+        ? firstName.substring(0, currentIndex)
+        : fullName.first.substring(0, currentIndex + 1);
+
+      setFirstName(newText);
+    } else {
+      // Handle typing the last name
+      if (!isDeleting && lastName === fullName.last) {
+        // Once we've typed everything, pause then start deleting
+        setIsDeleting(true);
+        setTypingSpeed(2000); // Pause at the end
+        return;
+      }
+
+      if (isDeleting && lastName === "") {
+        // If last name is deleted, go back to first name
+        setIsTypingFirstName(true);
+        return;
+      }
+
+      // Calculate the next part of last name
+      const currentIndex = isDeleting
+        ? lastName.length - 1
+        : lastName.length;
+
+      const newText = isDeleting
+        ? lastName.substring(0, currentIndex)
+        : fullName.last.substring(0, currentIndex + 1);
+
+      setLastName(newText);
+    }
+  };
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-3">
       {/* Background Color - Blue background that covers right portion on desktop */}
-      <div className="absolute top-0 right-0 w-1/2 md:w-3/5 h-full bg-blue-600 z-0"></div>
+      <div className="absolute top-0 right-0 w-1/3 md:w-2/5 h-full bg-blue-600 z-0"></div>
 
 
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
@@ -17,7 +91,15 @@ const HeroSection = () => {
               Hello world!
             </h3>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900">
-              I'm Muhammad<br /> Subhan Khan
+              I'm <span className="inline-block">{firstName}</span>
+              {isTypingFirstName && (
+                <span className="inline-block w-1 h-8 md:h-10 lg:h-12 bg-neutral-900 ml-1 animate-pulse" />
+              )}
+              <br />
+              <span className="inline-block">{lastName}</span>
+              {!isTypingFirstName && (
+                <span className="inline-block w-1 h-8 md:h-10 lg:h-12 bg-neutral-900 ml-1 animate-pulse" />
+              )}
             </h1>
             <p className="text-neutral-600 mb-8 max-w-md">
               Hello
