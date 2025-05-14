@@ -34,7 +34,7 @@ const HeroSection = () => {
               />
             </h1>
             <p className="text-neutral-600 mb-8 max-w-md">
-              Hello
+              Building intuitive digital experiences where design meets intelligence. From dynamic web apps to AI-powered features, I turn bold ideas into real-world solutions. Passionate about solving problems that matter—with speed, style, and smart code. Ready to create something users can't ignore?
             </p>
             <div className="flex items-center">
               <Link
