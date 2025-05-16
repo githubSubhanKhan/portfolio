@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-3">
       {/* Background Color - Blue background that covers right portion on desktop */}
-      <div className="absolute top-0 right-0 w-1/3 md:w-2/5 h-full bg-blue-600 z-0"></div>
+      <div className="absolute top-0 right-0 w-1/3 md:w-2/5 h-full bg-primary z-0"></div>
 
 
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
@@ -19,7 +19,7 @@ const HeroSection = () => {
             <h3 className="text-primary font-semibold text-xl mb-2">
               Hello world!
             </h3>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900 whitespace-pre-line">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 whitespace-pre-line">
               <TypeAnimation
                 sequence={[
                   "I'm Muhammad\nSubhan Khan",
