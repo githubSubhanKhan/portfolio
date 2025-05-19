@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import image from "../components/images/Professional_Profile_Pic.jpg";
-import { MoveUpRight } from "lucide-react";
-import { useState, useEffect } from 'react';
+import { ExternalLink, MoveUpRight } from "lucide-react";
 import { TypeAnimation } from 'react-type-animation';
 
 
@@ -39,12 +38,9 @@ const HeroSection = () => {
             <div className="flex items-center">
               <Link
                 to="/portfolio"
-                className="bg-white text-primary border border-primary rounded-full font-medium hover:bg-primary hover:text-white transition-colors px-6 py-1 rounded-full font-medium flex items-center transition-all"
+                className="gap-2 bg-white text-primary border border-primary rounded-full font-medium hover:bg-primary hover:text-white transition-colors px-6 py-1 rounded-full font-medium flex items-center transition-all"
               >
-                Get Started
-                <span className="ml-2 w-8 h-8 flex items-center justify-center text-sm">
-                  <MoveUpRight size={16} />
-                </span>
+                Get Started <ExternalLink className="h-4 w-4"/>
               </Link>
             </div>
 

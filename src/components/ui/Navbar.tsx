@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -12,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Me", path: "/about" },
-    { name: "My Portfolio", path: "/portfolio" },
+    { name: "Projects", path: "/portfolio" },
     { name: "Certifications", path: "/testimonials" },
     { name: "Contact", path: "/contact" }
   ];

@@ -3,6 +3,7 @@ import Navbar from "../ui/Navbar";
 import HeroSection from "@/pages/HeroSection";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
+import Certifications from "./Certifications";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -54,9 +55,9 @@ const LandingPage = () => {
       </motion.div>
 
       {/* Why Us Section */}
-      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <WhyUs />
-      </motion.div> */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <Certifications/>
+      </motion.div>
 
       {/* Footer */}
       {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>

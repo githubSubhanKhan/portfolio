@@ -114,7 +114,7 @@ const Projects = () => {
             <div className="container px-4 md:px-8 mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative text-primary">
                     <span className="inline-block relative z-10">
-                        My Projects
+                        Projects
                     </span>
                 </h2>
 
