@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-3">
+    <section id="hero-section" className="relative w-full min-h-screen flex items-center overflow-hidden pt-3">
       {/* Background Color - Blue background that covers right portion on desktop */}
       {/* <div className="absolute top-0 right-0 w-1/3 md:w-2/5 h-full bg-primary z-0"></div> */}
 

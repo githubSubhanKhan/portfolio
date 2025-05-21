@@ -21,24 +21,24 @@ const timelineItems = [
     period: "",
     description: "Specialization in Artificial Intelligence"
   },
-  {
-    icon: Award,
-    title: "Excellence Award",
-    period: "2024",
-    description: "Academic Excellence in AI Research"
-  },
+  // {
+  //   icon: Award,
+  //   title: "Excellence Award",
+  //   period: "2024",
+  //   description: "Academic Excellence in AI Research"
+  // },
   {
     icon: BriefcaseBusinessIcon,
     title: "Engineer Abdul Kalam Library",
     period: "2024-2025",
     description: "Trainee Software Developer"
   },
-  {
-    icon: Code,
-    title: "Software Developer",
-    period: "",
-    description: "Full Stack Developer"
-  },
+  // {
+  //   icon: Code,
+  //   title: "Software Developer",
+  //   period: "",
+  //   description: "Full Stack Developer"
+  // },
   {
     icon: MapPin,
     title: "Karachi",

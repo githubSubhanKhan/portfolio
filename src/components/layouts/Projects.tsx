@@ -4,8 +4,8 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { FaReact, FaNodeJs, FaJs, FaPython, FaBootstrap, FaHtml5 , FaCss3  } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { FaReact, FaNodeJs, FaJs, FaPython, FaBootstrap, FaHtml5, FaCss3 } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiMui } from "react-icons/si";
 import { TbCircleLetterC } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 
@@ -35,12 +35,12 @@ const getLanguageIcon = (language: string) => {
             return <SiTailwindcss className="h-5 w-5 text-[#06B6D4]" />;
         case "Python":
             return <FaPython className="h-5 w-5 text-[#3776AB]" />;
-        case "Bootstrap":
-            return <FaBootstrap className="h-5 w-5 text-[#7952B3]" />;
+        case "Material UI":
+            return <SiMui className="h-5 w-5 text-[#007FFF]" />;
         case "HTML":
-            return <FaHtml5 className="h-5 w-5 text-[#E34F26]"/>;
+            return <FaHtml5 className="h-5 w-5 text-[#E34F26]" />;
         case "CSS":
-            return <FaCss3 className="h-5 w-5 text-[#1572B6]"/>
+            return <FaCss3 className="h-5 w-5 text-[#1572B6]" />;
         default:
             return <Github className="h-5 w-5" />;
     }
@@ -61,22 +61,22 @@ const projects: Project[] = [
             getLanguageIcon("CSS"),
             getLanguageIcon("Tailwind CSS"),
         ],
-        url: "/projects/portfolio",
+        url: "https://next-book-eakl.vercel.app/",
     },
     {
         id: 2,
         title: "SolveSenseAI",
         description: "An AI-powered full-stack chatbot that solves advanced queries in seconds via APIs, with secure authentication and chat history saving.",
-        languages: ["Node.js", "React", "Bootstrap", "JavaScript", "HTML", "CSS"],
+        languages: ["Node.js", "React", "Material UI", "JavaScript", "HTML", "CSS"],
         icon: [
             getLanguageIcon("Node.js"),
             getLanguageIcon("React"),
-            getLanguageIcon("Bootstrap"),
+            getLanguageIcon("Material UI"),
             getLanguageIcon("JavaScript"),
             getLanguageIcon("HTML"),
             getLanguageIcon("CSS"),
         ],
-        url: "/projects/task-app",
+        url: "https://solve-sense-ai.vercel.app/",
     },
     {
         id: 3,
@@ -100,7 +100,7 @@ const projects: Project[] = [
         icon: [
             getLanguageIcon("C"),
         ],
-        url: "/projects/weather",
+        url: "https://github.com/githubSubhanKhan/Word-Searching-Game",
     },
 ];
 
@@ -110,7 +110,7 @@ const Projects = () => {
     };
 
     return (
-        <section className="w-full py-12 md:py-24">
+        <section className="w-full py-12 md:py-12" id="projects">
             <div className="container px-4 md:px-8 mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative text-primary">
                     <span className="inline-block relative z-10">
@@ -149,11 +149,19 @@ const Projects = () => {
 
                                 <CardFooter>
                                     <Button
+                                        asChild
                                         className="w-full hover:bg-transparent hover:text-black hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 py-5"
                                     >
-                                        View Project <ExternalLink className="h-4 w-4" />
+                                        <a
+                                            href={project.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            View Project <ExternalLink className="h-4 w-4" />
+                                        </a>
                                     </Button>
                                 </CardFooter>
+
                             </Card>
 
                         </motion.div>

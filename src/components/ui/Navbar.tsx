@@ -7,12 +7,20 @@ const Navbar = () => {
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const handleSmoothScroll = (id: string) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
   // Navigation links
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Me", path: "#about-me" },
-    { name: "Projects", path: "#project" },
-    { name: "Certifications", path: "#certificates" },
+    { name: "Home", path: "#hero-section" },
+    { name: "About Me", path: "#about" },
+    { name: "Projects", path: "#projects" },
+    { name: "Certifications", path: "#certifications" },
     { name: "Contact Me", path: "#contact-me" }
   ];
 
@@ -24,17 +32,26 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Website Name */}
           <div>
-            <Link to="/" className="text-primary font-bold text-lg">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent URL update
+                const section = document.querySelector("#hero-section");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-primary font-bold text-lg cursor-pointer"
+            >
               Portfolio
-            </Link>
+            </a>
+
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.path}
-                className="text-neutral hover:text-primary font-medium transition-colors"
+                onClick={() => handleSmoothScroll(link.path)}
+                className="text-neutral hover:text-primary font-medium transition-colors cursor-pointer"
               >
                 {link.name}
               </a>
@@ -95,9 +112,8 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.path}
+                  onClick={() => handleSmoothScroll(link.path)}
                   className="block py-2 px-4 text-neutral hover:bg-primary-light hover:text-primary"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
