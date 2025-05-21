@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      scrollMargin: {
+        nav: '4rem' // 64px = your navbar height
+      },
       colors: {
         // Core brand colors extracted from the screenshot
         primary: {

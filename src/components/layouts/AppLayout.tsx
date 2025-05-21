@@ -15,7 +15,7 @@ const fadeInUp = {
 const LandingPage = () => {
   return (
     <div
-      className={`min-h-screen flex flex-col transition-colors duration-300 bg-neutral-bg` }
+      className={`min-h-screen flex flex-col transition-colors duration-300 bg-neutral-bg`}
       id="home"
     >
       <style>{`
@@ -43,31 +43,38 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <HeroSection/>
+        <HeroSection />
       </motion.div>
 
       {/* About Us Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <AboutMe/>
+        <AboutMe />
       </motion.div>
 
       {/* Faculty Reviews Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <Projects/>
+        <Projects />
       </motion.div>
 
       {/* Why Us Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <Certifications/>
+        <Certifications />
       </motion.div>
 
       {/* Footer */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <ContactMe/>
+      <motion.div
+        id="contact-me"  // Add this
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <ContactMe />
       </motion.div>
 
+
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <Footer/>
+        <Footer />
       </motion.div>
     </div>
   );

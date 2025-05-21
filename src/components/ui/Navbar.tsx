@@ -10,11 +10,12 @@ const Navbar = () => {
   // Navigation links
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Me", path: "/about" },
-    { name: "Projects", path: "/portfolio" },
-    { name: "Certifications", path: "/testimonials" },
-    { name: "Contact", path: "/contact" }
+    { name: "About Me", path: "#about-me" },
+    { name: "Projects", path: "#project" },
+    { name: "Certifications", path: "#certificates" },
+    { name: "Contact Me", path: "#contact-me" }
   ];
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center transition-all duration-300 bg-white shadow-md"
@@ -28,22 +29,21 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.path}
+                href={link.path}
                 className="text-neutral hover:text-primary font-medium transition-colors"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
 
           {/* CTA Button - Always visible */}
           <div className="flex items-center">
-            
+
 
             {/* Mobile Menu Button */}
             <button
@@ -93,14 +93,15 @@ const Navbar = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg">
             <div className="py-2">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.path}
+                  href={link.path}
                   className="block py-2 px-4 text-neutral hover:bg-primary-light hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
-                </Link>
+                </a>
+
               ))}
             </div>
           </div>

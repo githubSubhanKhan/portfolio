@@ -141,14 +141,14 @@ export default function Certifications() {
                 {/* Browser window mockup */}
                 <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-4xl mx-auto dark:bg-gray-800 dark:border dark:border-gray-700">
                     {/* Browser toolbar */}
-                    <div className="bg-gray-100 px-4 py-2 flex items-center border-b dark:bg-gray-900 dark:border-gray-700">
+                    <div className="bg-bluecustom px-4 py-2 flex items-center border-b dark:bg-gray-900 dark:border-gray-700">
                         <div className="flex space-x-2">
                             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                         </div>
                         <div className="flex-1 mx-4">
-                            <div className="h-6 bg-white rounded-md w-full flex items-center justify-center text-xs text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+                            <div className="h-6 bg-white rounded-md w-full flex items-center justify-center text-xs text-black dark:bg-gray-800 dark:text-gray-400">
                                 {currentView === 'home'
                                     ? 'file:///certifications/'
                                     : `file:///certifications/${selectedCategory?.id}/`}
@@ -157,7 +157,7 @@ export default function Certifications() {
                     </div>
 
                     {/* Window content */}
-                    <div className="p-6 min-h-96 bg-gray-50 dark:bg-gray-800">
+                    <div className="p-6 min-h-96 bg-bluecustom dark:bg-gray-800">
                         {currentView === 'home' ? (
                             // Folders view
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
@@ -171,7 +171,7 @@ export default function Certifications() {
                                                 >
                                                     <CardContent className="pt-6 pb-2 flex flex-col items-center">
                                                         <div className="relative">
-                                                            <Folder className="w-16 h-16 text-yellow-500" />
+                                                            <Folder className="w-16 h-16 text-primary" />
                                                             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3 text-xs text-center font-medium text-gray-700 dark:text-gray-300">
                                                                 {category.certifications.length}
                                                             </span>
@@ -234,7 +234,7 @@ export default function Certifications() {
                     </div>
 
                     {/* Status bar */}
-                    <div className="bg-gray-100 px-4 py-1 border-t flex justify-between text-xs text-gray-500 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400">
+                    <div className="bg-bluecustom px-4 py-1 border-t flex justify-between text-xs text-black dark:bg-gray-900 dark:border-gray-700 dark:text-gray-400">
                         <span>{currentView === 'home'
                             ? `${certificationCategories.length} folders`
                             : `${selectedCategory?.certifications.length || 0} certificates`}

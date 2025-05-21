@@ -12,6 +12,7 @@ import NoMatch from "./pages/NoMatch";
 // import { useAuth } from "./contexts/AuthContext"; // Make sure this path is correct
 import Error500 from "./pages/Error500";
 import HeroSection from "./pages/HeroSection";
+import ContactMe from "./components/layouts/ContactMe";
 
 // Root component that handles redirection logic
 // const RootRedirect = () => {
@@ -30,8 +31,8 @@ export const router = createBrowserRouter([
     element: <Applayout/>,
   },
   // {
-  //   path: "/sign-up",
-  //   element: <SignUp />,
+  //   path: "/contact-me",
+  //   element: <ContactMe/>,
   // },
   // {
   //   path: "/sign-in",

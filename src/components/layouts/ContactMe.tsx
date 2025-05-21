@@ -104,7 +104,7 @@ const ContactMe = () => {
     };
 
     return (
-        <section className="py-12 px-4" id="contact">
+        <section className="py-12 px-4 scroll-m-nav" id="contact-me">
             <div className="container mx-auto">
                 <h2 className="text-3xl font-bold mb-10 text-center text-primary">Contact Me</h2>
 
