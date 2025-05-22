@@ -8,14 +8,10 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section id="hero-section" className="relative w-full min-h-screen flex items-center overflow-hidden pt-3">
-      {/* Background Color - Blue background that covers right portion on desktop */}
-      {/* <div className="absolute top-0 right-0 w-1/3 md:w-2/5 h-full bg-primary z-0"></div> */}
-
-
       <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
-        <div className="flex flex-col lg:flex-col md:flex-row items-center lg:items-stretch justify-between">
+        <div className="flex flex-col md:flex-row items-center lg:items-stretch justify-between">
           {/* Left Content - Text */}
-          <div className="w-full lg:w-5/12 mb-12 lg:mb-0 text-left">
+          <div className="w-full md:w-5/12 lg:w-5/12 mb-12 md:mb-0 text-left">
             <h3 className="text-primary font-semibold text-xl mb-2">
               Hello world!
             </h3>
@@ -37,7 +33,6 @@ const HeroSection = () => {
               Building intuitive digital experiences where design meets intelligence. From dynamic web apps to AI-powered features, I turn bold ideas into real-world solutions. Passionate about solving problems that matter—with speed, style, and smart code. Ready to create something users can't ignore?
             </p>
             <div className="flex items-center">
-
               <Button
                 asChild
                 className="text-white hover:bg-transparent hover:text-black hover:scale-105 transition-all duration-300 px-6 py-3 gap-2"
@@ -46,14 +41,11 @@ const HeroSection = () => {
                   Download CV
                 </a>
               </Button>
-
             </div>
-
           </div>
 
           {/* Right Content - Browser Window with Image */}
-          <div className="w-full lg:w-6/12 flex items-center justify-start relative">
-
+          <div className="w-full md:w-6/12 lg:w-6/12 flex items-center justify-start relative">
             {/* Browser window mockup */}
             <div className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-md">
               {/* Browser toolbar */}
@@ -84,7 +76,6 @@ const HeroSection = () => {
                   <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-bluecustom px-6 py-2 rounded-full shadow-md text-black font-medium whitespace-nowrap text-sm sm:text-base">
                     Software Developer
                   </div>
-
                 </div>
               </div>
             </div>
