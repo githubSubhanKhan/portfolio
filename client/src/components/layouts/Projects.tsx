@@ -67,10 +67,11 @@ const projects: Project[] = [
         id: 3,
         title: "Portfolio Website",
         description: "A fully responsive website built with advanced UI frameworks to showcase my journey, projects, and certifications from start to present.",
-        languages: ["React", "Tailwind CSS"],
+        languages: ["React", "Tailwind CSS", "Node.js"],
         icon: [
             getLanguageIcon("React"),
             getLanguageIcon("Tailwind CSS"),
+            getLanguageIcon("Node.js"),
         ],
         url: "/projects/ecommerce",
     },
