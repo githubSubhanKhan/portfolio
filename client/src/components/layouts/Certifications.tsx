@@ -107,6 +107,12 @@ const certificationCategories: CertificationCategory[] = [
                 name: 'GPT4o: Code & Conquer Hackathon',
                 thumbnail: '/certificates/gpt 4o.jpg',
                 fullImage: '/certificates/gpt 4o.jpg',
+            },
+            {
+                id: 'hk-2',
+                name: 'GPT4o Badge',
+                thumbnail: '/certificates/gpt 4o badge.jpeg',
+                fullImage: '/certificates/gpt 4o badge.jpeg',
             }
         ],
     }
