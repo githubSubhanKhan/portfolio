@@ -33,7 +33,7 @@ const ContactMe = () => {
 
     const sendToMongoDB = async () => {
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/form/submit`, {
+            const res = await fetch(`${process.env.VITE_API_BASE_URL}/api/form/submit`, {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
