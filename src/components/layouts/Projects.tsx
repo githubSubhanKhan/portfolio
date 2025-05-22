@@ -4,11 +4,6 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { FaReact, FaNodeJs, FaJs, FaPython, FaBootstrap, FaHtml5, FaCss3 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiMui } from "react-icons/si";
-import { TbCircleLetterC } from "react-icons/tb";
-import { IoLogoJavascript } from "react-icons/io";
-
 
 type Project = {
     id: number;
@@ -19,22 +14,24 @@ type Project = {
     url: string;
 };
 
-const getLanguageIcon = (language: string) => {
+const getLanguageIcon = (language: string): React.ReactNode => {
+    const iconStyle = "h-5 w-5 object-contain";
+    
     switch (language) {
         case "TypeScript":
-            return <SiTypescript className="h-5 w-5 text-[#3178c6]" />;
+            return <img src="/icons/typescript.svg" alt="TypeScript" className={`${iconStyle} text-#3178C6`} />;
         case "React":
-            return <FaReact className="h-5 w-5 text-[#61dafb]" />;
+            return <img src="/icons/react.svg" alt="React" className={iconStyle} />;
         case "C":
-            return <TbCircleLetterC className="h-5 w-5 text-[#00599C]" />;
+            return <img src="/icons/c.svg" alt="C" className={iconStyle} />;
         case "Node.js":
-            return <FaNodeJs className="h-5 w-5 text-[#339933]" />;
+            return <img src="/icons/nodedotjs.svg" alt="Node.js" className={iconStyle} />;
         case "Tailwind CSS":
-            return <SiTailwindcss className="h-5 w-5 text-[#06B6D4]" />;
+            return <img src="/icons/tailwindcss.svg" alt="Tailwind CSS" className={iconStyle} />;
         case "Python":
-            return <FaPython className="h-5 w-5 text-[#3776AB]" />;
+            return <img src="/icons/python.svg" alt="Python" className={iconStyle} />;
         case "Material UI":
-            return <SiMui className="h-5 w-5 text-[#007FFF]" />;
+            return <img src="/icons/mui.svg" alt="Material UI" className={iconStyle} />;
         default:
             return <Github className="h-5 w-5" />;
     }
