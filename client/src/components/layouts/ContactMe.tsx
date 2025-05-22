@@ -44,9 +44,9 @@ const ContactMe = () => {
             if (!res.ok) throw new Error("Failed to send message");
 
             const data = await res.json();
-            console.log("✅ MongoDB Response:", data);
+            // console.log("✅ MongoDB Response:", data);
         } catch (error) {
-            console.error("❌ Error sending to MongoDB", error);
+            // console.error("❌ Error sending to MongoDB", error);
             throw error;
         }
     };
