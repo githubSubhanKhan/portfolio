@@ -81,9 +81,10 @@ const HeroSection = () => {
                   />
 
                   {/* Role badge */}
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-bluecustom px-6 py-2 rounded-full shadow-md text-black font-medium">
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-bluecustom px-6 py-2 rounded-full shadow-md text-black font-medium whitespace-nowrap text-sm sm:text-base">
                     Software Developer
                   </div>
+
                 </div>
               </div>
             </div>
