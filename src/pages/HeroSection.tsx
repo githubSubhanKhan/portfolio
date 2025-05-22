@@ -57,7 +57,7 @@ const HeroSection = () => {
                 </div>
                 <div className="flex-1 mx-4">
                   <div className="h-6 bg-white rounded-md w-full flex items-center justify-center text-xs text-black">
-                    www.connorhamiltom.com
+                    subhan-khan-portfolio.vercel.app
                   </div>
                 </div>
               </div>
