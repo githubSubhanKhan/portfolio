@@ -42,10 +42,11 @@ const HeroSection = () => {
                 asChild
                 className="text-white hover:bg-transparent hover:text-black hover:scale-105 transition-all duration-300 px-6 py-3 gap-2"
               >
-                <a href="#contact-me">
-                  Contact Me <ExternalLink className="h-4 w-4" />
+                <a href="/subhan_resume_2025.pdf" download>
+                  Download CV
                 </a>
               </Button>
+
             </div>
 
           </div>

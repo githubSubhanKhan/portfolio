@@ -134,7 +134,7 @@ export default function Certifications() {
     };
 
     return (
-        <section id="certifications" className="py-12">
+        <section id="certifications" className="py-12 md:py-8">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-center text-primary">Certifications</h2>
 
@@ -201,7 +201,7 @@ export default function Certifications() {
 
                                 <h3 className="text-xl font-semibold mb-4 dark:text-gray-100">{selectedCategory?.name}</h3>
 
-                                <div className="overflow-x-auto">
+                                <div className="overflow-x-auto mt-4 pb-3 px-2">
                                     <div className="flex gap-6 w-max">
                                         {selectedCategory?.certifications.map((cert) => (
                                             <Card

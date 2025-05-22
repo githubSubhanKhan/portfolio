@@ -23,8 +23,6 @@ const getLanguageIcon = (language: string) => {
     switch (language) {
         case "TypeScript":
             return <SiTypescript className="h-5 w-5 text-[#3178c6]" />;
-        case "JavaScript":
-            return <IoLogoJavascript className="h-5 w-5 text-[#f7df1e]" />;
         case "React":
             return <FaReact className="h-5 w-5 text-[#61dafb]" />;
         case "C":
@@ -37,10 +35,6 @@ const getLanguageIcon = (language: string) => {
             return <FaPython className="h-5 w-5 text-[#3776AB]" />;
         case "Material UI":
             return <SiMui className="h-5 w-5 text-[#007FFF]" />;
-        case "HTML":
-            return <FaHtml5 className="h-5 w-5 text-[#E34F26]" />;
-        case "CSS":
-            return <FaCss3 className="h-5 w-5 text-[#1572B6]" />;
         default:
             return <Github className="h-5 w-5" />;
     }
@@ -51,14 +45,11 @@ const projects: Project[] = [
         id: 1,
         title: "NextBook",
         description: "A next-gen AI recommendation system uses LLMs, NLP, and RAG for smart, context-aware, and personalized suggestions.",
-        languages: ["TypeScript", "React", "Python", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+        languages: ["TypeScript", "React", "Python", "Tailwind CSS"],
         icon: [
             getLanguageIcon("TypeScript"),
             getLanguageIcon("React"),
             getLanguageIcon("Python"),
-            getLanguageIcon("JavaScript"),
-            getLanguageIcon("HTML"),
-            getLanguageIcon("CSS"),
             getLanguageIcon("Tailwind CSS"),
         ],
         url: "https://next-book-eakl.vercel.app/",
@@ -67,14 +58,11 @@ const projects: Project[] = [
         id: 2,
         title: "SolveSenseAI",
         description: "An AI-powered full-stack chatbot that solves advanced queries in seconds via APIs, with secure authentication and chat history saving.",
-        languages: ["Node.js", "React", "Material UI", "JavaScript", "HTML", "CSS"],
+        languages: ["Node.js", "React", "Material UI"],
         icon: [
             getLanguageIcon("Node.js"),
             getLanguageIcon("React"),
             getLanguageIcon("Material UI"),
-            getLanguageIcon("JavaScript"),
-            getLanguageIcon("HTML"),
-            getLanguageIcon("CSS"),
         ],
         url: "https://solve-sense-ai.vercel.app/",
     },
@@ -82,13 +70,10 @@ const projects: Project[] = [
         id: 3,
         title: "Portfolio Website",
         description: "A fully responsive website built with advanced UI frameworks to showcase my journey, projects, and certifications from start to present.",
-        languages: ["React", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
+        languages: ["React", "Tailwind CSS"],
         icon: [
             getLanguageIcon("React"),
             getLanguageIcon("Tailwind CSS"),
-            getLanguageIcon("JavaScript"),
-            getLanguageIcon("HTML"),
-            getLanguageIcon("CSS"),
         ],
         url: "/projects/ecommerce",
     },
@@ -110,7 +95,7 @@ const Projects = () => {
     };
 
     return (
-        <section className="w-full py-12 md:py-12" id="projects">
+        <section className="w-full py-8 md:py-8" id="projects">
             <div className="container px-4 md:px-8 mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative text-primary">
                     <span className="inline-block relative z-10">

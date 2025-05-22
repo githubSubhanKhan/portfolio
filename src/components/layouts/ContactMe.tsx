@@ -104,7 +104,7 @@ const ContactMe = () => {
     };
 
     return (
-        <section className="py-12 px-4 scroll-m-nav" id="contact-me">
+        <section className="py-12 px-4 scroll-m-nav md:py-8" id="contact-me">
             <div className="container mx-auto">
                 <h2 className="text-3xl font-bold mb-10 text-center text-primary">Contact Me</h2>
 
@@ -183,8 +183,8 @@ const ContactMe = () => {
                     <div className="hidden md:block">
                         <Card className="p-6 bg-bluecustom border border-black border-[2px] h-full overflow-hidden">
                             <h3 className="text-lg font-medium mb-4 text-black">Response Preview</h3>
-                            <div className="bg-black/80 p-4 rounded-md overflow-auto h-[380px]">
-                                <pre className="text-green-500 text-sm whitespace-pre-wrap">
+                            <div className="p-4 rounded-md overflow-auto h-[380px]">
+                                <pre className="text-black text-sm whitespace-pre-wrap">
                                     {JSON.stringify(getResponsePreview(), null, 2)}
                                 </pre>
                             </div>
