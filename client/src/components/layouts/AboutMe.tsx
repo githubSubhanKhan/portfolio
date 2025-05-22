@@ -17,7 +17,7 @@ const timelineItems = [
   },
   {
     icon: GraduationCapIcon,
-    title: "Bachelors in Computer Science & Information Technology",
+    title: "Bachelor's in Computer Science & Information Technology",
     period: "",
     description: "Specialization in Artificial Intelligence"
   },
@@ -31,7 +31,7 @@ const timelineItems = [
     icon: BriefcaseBusinessIcon,
     title: "Engineer Abdul Kalam Library",
     period: "2024-2025",
-    description: "Trainee Software Developer"
+    description: "Software Developer Intern"
   },
   // {
   //   icon: Code,
