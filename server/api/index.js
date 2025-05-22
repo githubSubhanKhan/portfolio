@@ -9,7 +9,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://subhan-khan-portfolio.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://subhan-khan-portfolio.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
